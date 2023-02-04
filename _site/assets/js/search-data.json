@@ -1,0 +1,176 @@
+{"0": {
+    "doc": "Debian",
+    "title": "Debian",
+    "content": "Documentación destacada sobre las configuraciones en este sistema operativo . ",
+    "url": "/docs/Debian",
+    "relUrl": "/docs/Debian"
+  },"1": {
+    "doc": "Instalar Entware Asus Merlin",
+    "title": "Instalación de Entware en firmware Merlin",
+    "content": "Entware es un repositorio de software que nos va a permitir la instalación de diferentes programas en nuestro router. Software disponible en Entware . Requisitos . | Es necesario tener conectado un disco USB en el router formateado con ext2 o ext3 | Si está instalado Download Manager, se debe desinstalar y reiniciar el router | . Instalación . Descargar el script y añadirlo al usb. Nos conectamos por ssh al router. Ejecutar el script: . usuario@RT-AC86U-3EB8:/tmp/home/root# entware-setup.sh Info: This script will guide you through the Entware installation. Info: Script modifies \"entware\" folder only on the chosen drive, Info: no other data will be changed. Existing installation will be Info: replaced with this one. Also some start scripts will be installed, Info: the old ones will be saved on Entware partition with name Info: like /tmp/mnt/sda1/jffs_scripts_backup.tgz . Entware se instalará en el USB. Si tenemos varios nos preguntará donde instalarlo. Uso . opkg list - lista todos los paquetes disponibles para instalar opkg install nombre_software - instala el paquete nombre_software opkg remove software_name - borra el paquete nombre_software . A partir de aquí podemos instalar software como Tailscale. Fuentes: https://elblogdelazaro.org/posts/2019-01-02-instalacion-de-entware-en-firmware-merlin/ https://github.com/RMerl/asuswrt-merlin/wiki/Entware . ",
+    "url": "/docs/Network/Entware%20AsusMerlin.html#instalaci%C3%B3n-de-entware-en-firmware-merlin",
+    "relUrl": "/docs/Network/Entware%20AsusMerlin.html#instalación-de-entware-en-firmware-merlin"
+  },"2": {
+    "doc": "Instalar Entware Asus Merlin",
+    "title": "Instalar Entware Asus Merlin",
+    "content": " ",
+    "url": "/docs/Network/Entware%20AsusMerlin.html",
+    "relUrl": "/docs/Network/Entware%20AsusMerlin.html"
+  },"3": {
+    "doc": "Fedora",
+    "title": "Fedora",
+    "content": "To make it as easy as possible to write documentation in plain Markdown, most UI components are styled using default Markdown elements with few additional CSS classes needed. ",
+    "url": "/docs/Fedora",
+    "relUrl": "/docs/Fedora"
+  },"4": {
+    "doc": "Firewall",
+    "title": "Configuración FirewallD",
+    "content": "Instalación y configuración del firewallD . Si queremos tener el applet en la barra de tareas de gnome añadimos lo siguiente: . sudo dnf install firewall-config firewall-applet -y . FirewalID debería estar ya habilitado por defecto, lo comprobamos: La mejor práctica es habilitar automáticamente el software de firewall al iniciar el sistema e iniciarlo de inmediato. Esto se puede lograr con un comando todo en uno de la siguiente manera. sudo systemctl enable firewalld --now . A continuación, verificamos el estado de FirewallD para asegurarse de que todo funcione y no haya errores. systemctl status firewalld . Después añadimos a los programas de inicio el firewall-applet de la siguiente forma: . cd ~/.config/autostart touch firewall-applet.desktop nano firewall-applet.desktop . Añadimos el siguiente texto: . [Desktop Entry] Name=Firewall Applet Comment=Firewall Applet Icon=firewall-config Categories=System;Settings;Security; #Translators: These are searchable keywords for the firewall configuration tool Keywords=firewall;network;security;iptables;netfilter; Exec=/usr/bin/firewall-applet Type=Application StartupNotify=true Terminal=false X-Desktop-File-Install-Version=0.26 . Las reglas del firewall para aplicaciones y demás ya es configurar a gusto del usuario. Fuentes: https://fedoraproject.org/wiki/FirewallD/es . ",
+    "url": "/docs/Fedora/FirewallD.html#configuraci%C3%B3n-firewalld",
+    "relUrl": "/docs/Fedora/FirewallD.html#configuración-firewalld"
+  },"5": {
+    "doc": "Firewall",
+    "title": "Firewall",
+    "content": " ",
+    "url": "/docs/Fedora/FirewallD.html",
+    "relUrl": "/docs/Fedora/FirewallD.html"
+  },"6": {
+    "doc": "Flatpak",
+    "title": "Soporte Flatpak en Debian 11 Bullseye",
+    "content": "Información en la web oficial de Flatpak. Aunque, a mi modo de ver, es importante instalar el software con la paquetería .deb, en ocasiones es necesario usar flatpak porque el software no está disponible en otro formato. Instalamos el paquete flatpak . apt install flatpak . Instalamos el plugin para la tienda de software. En este caso la tienda de Gnome. apt install gnome-software-plugin-flatpak . Agregamos el repositorio de Flathub . flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo . Para buscar una aplicación en Flathub: . flatpak search firefox . Listado de aplicaciones flatpak instaladas . flatpak list . Listado limpio que solo enumera las aplicaciones . flatpak list --app . Para eliminar un flatpak, primero debemos obtener el ID de la aplicación y ejecutar el siguiente comando . flatpak uninstall --delete-data org.mozilla.firefox . Para eliminar un flatpak, primero debemos obtener el ID de la aplicación y ejecutar el siguiente comando . flatpak uninstall --delete-data org.mozilla.firefox . Elimina todas la librerías que no están en uso por ninguna app instalada, o las versiones antiguas residuales que ya han sido actualizadas . flatpak uninstall --unused . Para eliminar completamente Flatpak del sistema ejecutamos: . sudo flatpak repair . Después podemos seguir con los comandos: . sudo apt autoremove flatpak sudo apt purge flatpak . ",
+    "url": "/docs/Debian/Flatpak.html#soporte-flatpak-en-debian-11bullseye",
+    "relUrl": "/docs/Debian/Flatpak.html#soporte-flatpak-en-debian-11bullseye"
+  },"7": {
+    "doc": "Flatpak",
+    "title": "Flatpak",
+    "content": " ",
+    "url": "/docs/Debian/Flatpak.html",
+    "relUrl": "/docs/Debian/Flatpak.html"
+  },"8": {
+    "doc": "Mi software imprescindible",
+    "title": "Mis imprescindibles",
+    "content": "Contenido . | System | Apps | Network | Desktop | Programming | . ",
+    "url": "/docs/Debian/Mis%20imprescindibles.html#mis-imprescindibles",
+    "relUrl": "/docs/Debian/Mis%20imprescindibles.html#mis-imprescindibles"
+  },"9": {
+    "doc": "Mi software imprescindible",
+    "title": "System",
+    "content": ". | quitar entradas antiguas de UEFI | Instalarción Zsh . | Alias .zshrc (fichero .zshrc) | . | firewall-config y firewall-applet (ojo añadir firewall-applet al arranque del sistema) | Instalación conky (fichero .conkyrc) | . ",
+    "url": "/docs/Debian/Mis%20imprescindibles.html#system",
+    "relUrl": "/docs/Debian/Mis%20imprescindibles.html#system"
+  },"10": {
+    "doc": "Mi software imprescindible",
+    "title": "Apps",
+    "content": ". | Configuración Flatpak | Timeshift | Deja-dup | Insync | Nextcloud | Joplin (Flatpak) | Thunderbird . | Idioma thunderbird | . | Libreoffice . | Idioma en Libreoffice - OK | . | Kooha (Flatpak) | Teams | Telegram | Boxes de Gnome | Virtual box | . ",
+    "url": "/docs/Debian/Mis%20imprescindibles.html#apps",
+    "relUrl": "/docs/Debian/Mis%20imprescindibles.html#apps"
+  },"11": {
+    "doc": "Mi software imprescindible",
+    "title": "Network",
+    "content": ". | Configurar claves ssh con NAS principal | Configurar claves ssh con NAS secundario | Configurar accesos smb al NAS principal | Configurar accesos smb al NAS secundario a través de Zerotier o Tailscale . | Con tailscale el recurso compartido en smb es: smb://xxx.xxx.xxx.xxx/Recurso_compartido | . | Configurar claves ssh con ROUTERS | Configurar Wireguard NAS principal | Configurar VPN de pago en Gnome . | Instalar antes el paquete network-manager-openvpn-gnome | . | Configuración ZeroTier (ultima versión da fallo en Debian testing) | Configuración Tailscale . | Instalar extensión Gnome: Tailscale Status | . | . ",
+    "url": "/docs/Debian/Mis%20imprescindibles.html#network",
+    "relUrl": "/docs/Debian/Mis%20imprescindibles.html#network"
+  },"12": {
+    "doc": "Mi software imprescindible",
+    "title": "Desktop",
+    "content": ". | Primeros pasos con Gnome (https://itsfoss.com/things-to-do-after-installing-fedora/) . | Tweeks | Gnome extensions | Extension manager (está como paquete en Flathub) | Minimizar y Maximizar | Night-light settings | . | Cambiar primer dia calendario (Generar locales Debian) | Añadir accesos directos Office Online | Nuevo documento en plantillas de nautilus | . ",
+    "url": "/docs/Debian/Mis%20imprescindibles.html#desktop",
+    "relUrl": "/docs/Debian/Mis%20imprescindibles.html#desktop"
+  },"13": {
+    "doc": "Mi software imprescindible",
+    "title": "Programming",
+    "content": ". | visual studio code | Python entornos virtuales | . ",
+    "url": "/docs/Debian/Mis%20imprescindibles.html#programming",
+    "relUrl": "/docs/Debian/Mis%20imprescindibles.html#programming"
+  },"14": {
+    "doc": "Mi software imprescindible",
+    "title": "Mi software imprescindible",
+    "content": " ",
+    "url": "/docs/Debian/Mis%20imprescindibles.html",
+    "relUrl": "/docs/Debian/Mis%20imprescindibles.html"
+  },"15": {
+    "doc": "Network",
+    "title": "Network",
+    "content": "Documentación destacada sobre las configuraciones de la red . ",
+    "url": "/docs/Network",
+    "relUrl": "/docs/Network"
+  },"16": {
+    "doc": "Drivers Nvidia en Fedora",
+    "title": "Instalación de drivers NVIDIA en Fedroa",
+    "content": "Verificamos si en el administrador de software de Gnome aparecen los drivers Nvidia: . En caso afirmativo podemos saltarnos el siguiente paso. Si no aparecen los drivers de Nvidia quiere decir que tenemos que actualizar el repositorio RPMFusion . Instalación de forma gráfica desde administrador de software . Instalamos el software necesario a través de DNF: Instalamos primeramente el repositorio free: . sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm . Y después instalamos el non-free que es donde se alojan los drivers de Nvidia: . sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm sudo dnf upgrade -y . Si hacemos la instalación de forma gráfica instalamos “Nvidia Linux Graphics Driver” y “Nvidia X Server Settings”. Los demás no. Como se ve en la captura anterior. Instalación desde la terminal . sudo dnf -y install kmod-nvidia sudo dnf install xorg-x11-drv-nvidia-cuda . Puedes ejecutarlos juntos o uno y después el otro. El primero instala los drivers generales y el segundo comando el oporte para CUDA(cuda son los núcleos de Nvidia, una gráfica tiene miles normalmente a día de hoy, sería el equivalente a los núcleos de las CPU). De hecho, puedes instalar solo los drivers y prescindir del segundo programa, pero es mejor ambos. Fin. Fuentes: https://yourgeekweb.com/es/2022/06/18/como-instalar-los-drivers-de-nvidia-en-linux-fedora/ . ",
+    "url": "/docs/Fedora/Nvidia.html#instalaci%C3%B3n-de-drivers-nvidia-en-fedroa",
+    "relUrl": "/docs/Fedora/Nvidia.html#instalación-de-drivers-nvidia-en-fedroa"
+  },"17": {
+    "doc": "Drivers Nvidia en Fedora",
+    "title": "Drivers Nvidia en Fedora",
+    "content": " ",
+    "url": "/docs/Fedora/Nvidia.html",
+    "relUrl": "/docs/Fedora/Nvidia.html"
+  },"18": {
+    "doc": "Primeros pasos Fedora",
+    "title": "Primeros pasos después de instalar Fedora",
+    "content": "Configurar DNF para descargas más rápidas: . sudo nano /etc/dnf/dnf.conf . y añadimos la siguiente línea: . max_parallel_downloads=10 . Realizamos una acutalización completa del sistema: . sudo dnf upgrade -y . Habilitamos los respostorios de RPM Fusion: . sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm . Después de habilitar RPM Fusion ya podemos instalar por ejemplo VLC . sudo dnf install vlc . Añadimos el repositorio de Flathub: . flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo . En la instalación Fedora no pregunta por el nombre del host. Ahora podemos modificarlo: . sudo hostnamectl set-hostname \"New_Custom_Name\" . Instalamos las aplicaciones esenciales para personalizar Gnome: . sudo dnf install gnome-tweaks gnome-extensions-app . Instalamos también Extension Manager desde el administrador de Software de Gnome (es una aplicación Flatpak). Habilitamos Maximizar y Minimizar en las ventanas: . Habilitar/deshabilitar los informes de errores: . Configuraciones de energía: . Habilitamos luz nocturna para reducir la fatiga visual: . Ordenación de directorios antes de los ficheros: . Configuraciones de papelera de reciclaje: . Fuentes: https://itsfoss.com/things-to-do-after-installing-fedora/ . ",
+    "url": "/docs/Fedora/Primeros%20pasos.html#primeros-pasos-despu%C3%A9s-de-instalar-fedora",
+    "relUrl": "/docs/Fedora/Primeros%20pasos.html#primeros-pasos-después-de-instalar-fedora"
+  },"19": {
+    "doc": "Primeros pasos Fedora",
+    "title": "Primeros pasos Fedora",
+    "content": " ",
+    "url": "/docs/Fedora/Primeros%20pasos.html",
+    "relUrl": "/docs/Fedora/Primeros%20pasos.html"
+  },"20": {
+    "doc": "Home",
+    "title": "Home",
+    "content": "Bienvenido a mi pequeño blog sobre instalaciones y configuraciones que voy aplicando en mis equipos. Aquí voy guardando aquellas tutoriales o manueles que voy aplicando en la configuración e instalación del diferente software. ",
+    "url": "/",
+    "relUrl": "/"
+  },"21": {
+    "doc": "Web estática con Jekyll y Bundle",
+    "title": "Configuración sistema para ejecutar web estática en local antes de subir a github",
+    "content": "Instalación de rubygems . Instalamos el software necesario a través de DNF: . sudo dnf install ruby rubygems ruby-devel gcc gcc-c++ rpm-build . Instalamos las gemas de jekyll y bundler: . gem install jekyll bundler . Como estamos usando la plantilla de just-the-docs ya vienen preparada con un Gemfile que es el que indica las gemas necesarias para ejecutar en local con jekyll. Ejecutamos dentro del directorio de nuestro proyecto: . bundle install . Después: . bundle exec jekyll serve . Se arrancará el servidor en: . localhost:4000 . Es posible que el sistema lance un error similar a este: . zsh: jekyll: command not found... Install package 'rubygem-jekyll' to provide command 'jekyll'? [N/y] nnn . Eso significa que no encuentra jekyll como comando. En mi sistema los ejecutables de las gemas se instalaban en el siguiente path: ~/bin Haciendo un ls aparecen los siguientes ejecutables: . bundle jekyll kramdown rake safe_yaml bundler just-the-docs listen rougify . En stacoverflow aportan una posible solución. Todo se limita a añdir al PATH el directorio donde se encuentran los ejecutables: . nano .zshrc copy and past these two lines of code at the end of the .zshrc export GEM_HOME=\"$(ruby -e 'puts Gem.user_dir')\" export PATH=\"$PATH:$GEM_HOME/bin\" . En ~/.local/share/gem/ruby se copia la carpeta ~/bin o bien se añade directamente esta última al path. Fuentes: https://docs.github.com/es/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll https://docs.github.com/es/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md . ",
+    "url": "/docs/Fedora/jekyll-bundle.html#configuraci%C3%B3n-sistema-para-ejecutar-web-est%C3%A1tica-en-local-antes-de-subir-a-github",
+    "relUrl": "/docs/Fedora/jekyll-bundle.html#configuración-sistema-para-ejecutar-web-estática-en-local-antes-de-subir-a-github"
+  },"22": {
+    "doc": "Web estática con Jekyll y Bundle",
+    "title": "Web estática con Jekyll y Bundle",
+    "content": " ",
+    "url": "/docs/Fedora/jekyll-bundle.html",
+    "relUrl": "/docs/Fedora/jekyll-bundle.html"
+  },"23": {
+    "doc": "Generar locales Debian",
+    "title": "Instalación nuevos locales en Debian",
+    "content": "Revisamos los locales que tenemos generados en el sistema: . locale -a . Podemos generar más editando /etc/locale.gen y descomentando la línea que nos interesa: . es_ES.UTF-8 UTF-8 . Generamos nuevamente los locales con: . locale-gen . Hacemos el cambio en “Region &amp; Language” . ",
+    "url": "/docs/Debian/locales.html#instalaci%C3%B3n-nuevos-locales-en-debian",
+    "relUrl": "/docs/Debian/locales.html#instalación-nuevos-locales-en-debian"
+  },"24": {
+    "doc": "Generar locales Debian",
+    "title": "Generar locales Debian",
+    "content": " ",
+    "url": "/docs/Debian/locales.html",
+    "relUrl": "/docs/Debian/locales.html"
+  },"25": {
+    "doc": "WOL desde Internet",
+    "title": "Configuración WOL desde Internet en router Asus",
+    "content": "Instalación y configuración del firewallD . El primer paso es hacer una redirección de puertos en el router: Elegimos un puerto aleatorio externo (que sea alto) y redireccionamos al puerto 9 a la IP 192.168.1.254: . Accedemos al router por ssh y creamos una nueva entrada en la tabla arp del router para reenviar el paquete WOL al broadcast de la red FF:FF:FF:FF:FF:FF (a todas las direcciones MAC): . arp -s 192.168.1.254 ff:ff:ff:ff:ff:ff . Verificamos que se ha creado la nueva entrada: . admin@(none):/jffs/scripts# arp ? (192.168.1.155) at &lt;incomplete&gt; on br0 ? (XXX.XXX.178.1) at XX:XX:XX:XX:fc:81 [ether] on eth0 ? (192.168.1.254) at ff:ff:ff:ff:ff:ff [ether] PERM on br0 &lt;---- ? (192.168.1.58) at XX:XX:XX:XX:4c:c4 [ether] on br0 ? (192.168.1.251) at XX:XX:XX:XX:5d:0a [ether] on br0 ? (192.168.1.170) at XX:XX:XX:XX:0e:f3 [ether] on br0 ? (192.168.1.40) at XX:XX:XX:XX:8a:58 [ether] on br0 . Ahora simplemente es necesario configurar nuestra aplicación WOL para enviar el magic packet: . | DIRECCION MAC: La de nuestro dispositivo que deseamos levantar | HOSTNAME/IP: myDDNS.asuscomm.com | PUERTO: Según el ejemplo 4231 | . Esta configuración del router desaparecerá con el siguiente reinicio. Para dejarla permanente creamos un pequeño script que haga este trabajo en cada reinicio: Los router Asus tienen un almacenamiento permanente en /jffs Creamos un directorio dentro de /jffs llamado scrits y creamos el siguiente fichero: . cat &lt;&lt;EOF &gt; wan-wol.sh #!/bin/sh scriptName=\"/jffs/scripts/\\$(basename $0)\" myIp=\"192.168.1.254\" /usr/bin/logger -t \"\\${scriptName}\" \\$$ \"arp -s \\${myIp} ff:ff:ff:ff:ff:ff\" arp -s \\$myIp ff:ff:ff:ff:ff:ff /usr/bin/logger -t \"\\${scriptName}\" \\$$ \"Check: \\$(arp | grep $myIp)\" EOF . Verificamos que esté bien: . cat /jffs/scripts/wan-wol.sh . Contenido completo del fichero wan-wol.sh: . #!/bin/sh scriptName=\"/jffs/scripts/$(basename $0)\" myIp=\"192.168.1.254\" /usr/bin/logger -t \"${scriptName}\" $$ \"arp -s $myIp ff:ff:ff:ff:ff:ff\" arp -s $myIp ff:ff:ff:ff:ff:ff /usr/bin/logger -t \"${scriptName}\" $$ \"Check: $(arp | grep $myIp)\" . Los hacemos ejecutable: . admin@(none):/jffs/scripts# chmod a+x wan-wol.sh . master@(none):/tmp/home/root# nvram show 2&gt;&amp;1 | grep script_usbmount script_usbmount= . master@(none):/jffs/scripts# nvram set script_usbmount=\"/jffs/scripts/wan-wol.sh\" master@(none):/jffs/scripts# nvram commit . master@(none):/jffs/scripts# nvram show 2&gt;&amp;1 | grep script_usbmount script_usbmount=/jffs/scripts/wan-wol.sh . Después de reiniciar el router debería haberse ejecutado el script para crear la entrada en la tabla arp: . Fuentes: https://andblu.blogspot.com/2016/08/configure-wol-from-internet-wan-asus.html . ",
+    "url": "/docs/Network/wol-wan.html#configuraci%C3%B3n-wol-desde-internet-en-router-asus",
+    "relUrl": "/docs/Network/wol-wan.html#configuración-wol-desde-internet-en-router-asus"
+  },"26": {
+    "doc": "WOL desde Internet",
+    "title": "WOL desde Internet",
+    "content": " ",
+    "url": "/docs/Network/wol-wan.html",
+    "relUrl": "/docs/Network/wol-wan.html"
+  },"27": {
+    "doc": "Instalacion zsh",
+    "title": "Instalación y configuración de zsh con oh-my-zsh",
+    "content": "Instalación zsh . sudo apt install git zsh util-linux-user . Clonamos el repositorio de oh-my-zsh . git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh . Usamos la primera plantilla para el fichero .zshrc . cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc . Cambiamos la terminal por defecto de nuestro usuario . sudo chsh -s /bin/zsh user_____ . Instalación del tema Powerlevel10k . git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k echo 'source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme' &gt;&gt;~/.zshrc . Modificamos el fichero .zshrc . ZSH_THEME=\"robbyrussell\" reemplazarlo por ZSH_THEME=\"powerlevel10k/powerlevel10k\" . Fuentes recomendadas para el tema MesloLGS NF Enlace en mi github Copiamos las fuentes a su ubicación y configuramos Gnome terminal con la fuente recomendada . /usr/share/fonts/truetype . Reiniciar la termninal, si no arranca la configuración inicial, siguiente comando . p10k configure . Instalación de los plugins . plugins=( git sudo web-search history zsh-autosuggestions zsh-syntax-highlighting zsh-completions ) . Los únicos plugin que requiere instalación manual es zsh-autosuggestions: zsh-autosuggestions zsh-completions sh-syntax-highlighting Clonamos los repositorios y añadimos los nombres al apartado plugins del fichero .zshrc: . git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions . El resto de plugins simplemente hay que añadirlo a la sección plugins de .zshrc: sudo web-search history . Fuentes: https://terminaldelinux.com/terminal/introduccion/instalacion-zsh/ https://blog.linuxitos.com/post/instalar-zsh-y-tema-powerlevel10k-fedora-33 https://travis.media/top-10-oh-my-zsh-plugins-for-productive-developers/#20210719-sudo . ",
+    "url": "/docs/Debian/zsh.html#instalaci%C3%B3n-y-configuraci%C3%B3n-de-zsh-con-oh-my-zsh",
+    "relUrl": "/docs/Debian/zsh.html#instalación-y-configuración-de-zsh-con-oh-my-zsh"
+  },"28": {
+    "doc": "Instalacion zsh",
+    "title": "Instalacion zsh",
+    "content": " ",
+    "url": "/docs/Debian/zsh.html",
+    "relUrl": "/docs/Debian/zsh.html"
+  }
+}

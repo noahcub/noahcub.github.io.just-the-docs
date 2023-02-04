@@ -1,0 +1,22 @@
+title: Mi pequeño manual github
+description: Manual de instalación y configuración de aplicaciones Linux
+theme: just-the-docs
+
+# Color scheme supports "light" (default) and "dark"
+color_scheme: dark
+
+url: https://noahcub.github.io/
+
+aux_links: # remove if you don't want this link to appear on your pages
+  Mi github: https://github.com/noahcub/noahcub.github.io
+  
+  
+gh_edit_branch: "main" # the branch that your docs is served from
+# gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+enable_copy_code_button: true
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
